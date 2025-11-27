@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Owner Sign Up - Janta-Garage</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0F3746; /* Matches the dark background of your welcome page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .signup-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            max-width: 500px; /* Slightly wider for business details */
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #0F3746;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        h3 {
+            color: #0F3746;
+            border-bottom: 2px solid #E0E0E0;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"], 
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input:focus, textarea:focus {
+            border-color: #92B9AA; /* Darker accent color on focus */
+            outline: none;
+        }
+        /* Button Styling - Matches the garage button style */
+        .submit-btn {
+            width: 100%;
+            background-color: #92B9AA; /* Greenish/neutral accent color */
+            color: #0F3746;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #7DA493;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #0F3746;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>🛠️ Garage Partner Onboarding</h2>
+        <form action="/api/register_garage" method="POST">
+            
+            <h3>Garage Details</h3>
+            <div class="form-group">
+                <label for="garage_name">Garage Name</label>
+                <input type="text" id="garage_name" name="garage_name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Full Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="service_specialty">Primary Services Offered (e.g., 2-Wheeler, 4-Wheeler Diesel, EV)</label>
+                <input type="text" id="service_specialty" name="service_specialty" placeholder="Used for matching customers to your garage">
+            </div>
+
+            <hr>
+            
+            <h3>Owner/Contact Details</h3>
+            <div class="form-group">
+                <label for="owner_name">Owner/Manager Full Name</label>
+                <input type="text" id="owner_name" name="owner_name" required>
+            </div>
+            <div class="form-group">
+                <label for="owner_email">Official Email Address</label>
+                <input type="email" id="owner_email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="owner_password">Set Password</label>
+                <input type="password" id="owner_password" name="password" required>
+            </div>
+            
+            <a href="sign-in.html"><button type="submit" class="submit-btn">Register Garage and Get Started</button></a>
+        </form>
+        <a href="index.html" class="back-link">← Back to Welcome</a>
+    </div>
+</body>
+</html>
